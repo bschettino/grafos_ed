@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3FD28C26191BB38B00B8459B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 3FD28C25191BB38B00B8459B /* main.c */; };
 		3FD28C28191BB38B00B8459B /* grafos.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3FD28C27191BB38B00B8459B /* grafos.1 */; };
+		3FD28C2F191BB41D00B8459B /* grafo.c in Sources */ = {isa = PBXBuildFile; fileRef = 3FD28C2E191BB41D00B8459B /* grafo.c */; };
+		3FD28C33191BB44800B8459B /* vizinho.c in Sources */ = {isa = PBXBuildFile; fileRef = 3FD28C32191BB44800B8459B /* vizinho.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,10 @@
 		3FD28C22191BB38B00B8459B /* grafos */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = grafos; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD28C25191BB38B00B8459B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		3FD28C27191BB38B00B8459B /* grafos.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = grafos.1; sourceTree = "<group>"; };
+		3FD28C2E191BB41D00B8459B /* grafo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = grafo.c; sourceTree = "<group>"; };
+		3FD28C30191BB43000B8459B /* grafo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grafo.h; sourceTree = "<group>"; };
+		3FD28C31191BB43B00B8459B /* vizinho.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vizinho.h; sourceTree = "<group>"; };
+		3FD28C32191BB44800B8459B /* vizinho.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vizinho.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,10 @@
 			children = (
 				3FD28C25191BB38B00B8459B /* main.c */,
 				3FD28C27191BB38B00B8459B /* grafos.1 */,
+				3FD28C2E191BB41D00B8459B /* grafo.c */,
+				3FD28C30191BB43000B8459B /* grafo.h */,
+				3FD28C31191BB43B00B8459B /* vizinho.h */,
+				3FD28C32191BB44800B8459B /* vizinho.c */,
 			);
 			path = grafos;
 			sourceTree = "<group>";
@@ -118,6 +128,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FD28C26191BB38B00B8459B /* main.c in Sources */,
+				3FD28C33191BB44800B8459B /* vizinho.c in Sources */,
+				3FD28C2F191BB41D00B8459B /* grafo.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +239,7 @@
 				3FD28C2D191BB38B00B8459B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
