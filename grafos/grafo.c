@@ -57,9 +57,18 @@ void ins_aresta(TGrafo *g, int no1, int no2, int custo){
         ant=q;
         q=q->prox_viz;
     }
-    ant->prox_viz = (TViz *) malloc(sizeof(TViz));
-    ant->prox_viz->id = no2;
-    ant->prox_viz->prox_viz = NULL;
+    if(!q){
+        TViz * novo = (TViz *) malloc(sizeof(TViz));
+        novo->prox_viz = NULL;
+        novo->id = no2;
+        novo->custo = custo;
+        if(!ant){
+            p->prim_viz = novo;
+        }
+        else{
+            ant->prox_viz = novo;
+        }
+    }
 }
 
 void retira_aresta(TGrafo *g, int no1, int no2){
