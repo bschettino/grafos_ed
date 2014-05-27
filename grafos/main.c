@@ -18,14 +18,15 @@ int main(int argc, const char * argv[])
     TGrafo *grafo=inicializa();
     int entrada = 0;
     
-    while(entrada != 6) {
+    while(entrada != 7) {
 		printf("\nDigite a opcao:\n");
         printf("1 - Carregar arquivo\n");
 		printf("2 - Inserir vertice\n");
         printf("3 - Retirar vertice\n");
 		printf("4 - Inserir aresta\n");
         printf("5 - Retirar aresta\n");
-		printf("6 - Sair\n");
+        printf("6 - Verificar se o grafo é conexo\n");
+		printf("7 - Sair\n");
 		scanf("%d",&entrada);
         if(entrada == 1){
             FILE * in;
@@ -77,7 +78,18 @@ int main(int argc, const char * argv[])
             scanf("%d",&valorVertice2);
             retira_aresta(grafo, valorVertice1, valorVertice2);
         }
+        else if (entrada == 6){
+            int respostaConexo;
+            respostaConexo = conexo(grafo);
+            if(respostaConexo == 1){
+                printf("O grafo é conexo");
+//            TODO  CHAMADA DE ARV GERADORA MINIMA E CAMINHO MAIS CURTO AQUI!
+            }
+            else{
+                printf("O grafo não é conexo");
+            }
+        }
         
     }
-
+    libera(grafo);
 }

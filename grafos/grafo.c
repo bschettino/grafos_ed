@@ -115,3 +115,31 @@ void libera(TGrafo *g){
         g = retira_no(g, g->no);
     }
 }
+
+int conexo(TGrafo *g){
+    if(!g)
+        return 0;
+    TGrafo *profundidade = inicializa();
+    TGrafo *aux = g;
+    TViz *vizinho;
+    while(aux){
+        vizinho = aux->prim_viz;
+        if(!busca_no(profundidade, aux->no))
+            profundidade = ins_no(profundidade, aux->no);
+        while(vizinho){
+            if(!busca_no(profundidade, vizinho->id)){
+                profundidade = ins_no(profundidade, vizinho->id);
+            }
+            vizinho = vizinho->prox_viz;
+        }
+        aux = aux->prox;
+    }
+    aux =g;
+    while(aux){
+        if(!busca_no(profundidade, aux->no))
+            return 0;
+        aux = aux->prox;
+    }
+    
+    return 1;
+}
