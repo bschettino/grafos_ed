@@ -40,6 +40,7 @@ TGrafo * busca_no(TGrafo *g, int no){
 TGrafo * ins_no(TGrafo * g, int no){
     TGrafo *novo = (TGrafo *) malloc(sizeof(TGrafo));
     novo->no = no;
+    novo->visitado = 0;
     novo->prim_viz = NULL;
     novo->prox = g;
     return novo;
@@ -116,30 +117,29 @@ void libera(TGrafo *g){
     }
 }
 
-int conexo(TGrafo *g){
-    if(!g)
-        return 0;
-    TGrafo *profundidade = inicializa();
+int respConexo(TGrafo *g){
     TGrafo *aux = g;
-    TViz *vizinho;
     while(aux){
-        vizinho = aux->prim_viz;
-        if(!busca_no(profundidade, aux->no))
-            profundidade = ins_no(profundidade, aux->no);
-        while(vizinho){
-            if(!busca_no(profundidade, vizinho->id)){
-                profundidade = ins_no(profundidade, vizinho->id);
-            }
-            vizinho = vizinho->prox_viz;
-        }
+        aux ->visitado = 0;
         aux = aux->prox;
     }
-    aux =g;
+    aux = g;
+    buscaProfundidade(aux->prim_viz, aux);
     while(aux){
-        if(!busca_no(profundidade, aux->no))
+        if(aux->visitado == 0)
             return 0;
         aux = aux->prox;
     }
-    
     return 1;
+}
+
+void buscaProfundidade(TViz *viz, TGrafo *g){
+    if(viz){
+        TGrafo * no = busca_no(g, viz->id);
+        if(no->visitado == 0){
+            no->visitado = 1;
+            buscaProfundidade(no->prim_viz,g);
+        }
+        buscaProfundidade(viz->prox_viz, g);
+    }
 }

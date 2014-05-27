@@ -18,7 +18,7 @@ int main(int argc, const char * argv[])
     TGrafo *grafo=inicializa();
     int entrada = 0;
     
-    while(entrada != 7) {
+    while(entrada != 8) {
 		printf("\nDigite a opcao:\n");
         printf("1 - Carregar arquivo\n");
 		printf("2 - Inserir vertice\n");
@@ -26,10 +26,11 @@ int main(int argc, const char * argv[])
 		printf("4 - Inserir aresta\n");
         printf("5 - Retirar aresta\n");
         printf("6 - Verificar se o grafo é conexo\n");
-		printf("7 - Sair\n");
+		printf("7 - Imprimir\n");
+		printf("8 - Sair\n");
 		scanf("%d",&entrada);
         if(entrada == 1){
-            FILE * in;
+            FILE *in;
             in = fopen(argv[1], "r");
             int numVertices, valorVertice, numArestas, verticeDestino, custo,i;
             if(in){
@@ -44,6 +45,7 @@ int main(int argc, const char * argv[])
                 for (i=0; i<numArestas; i++) {
                     fscanf(in, "%d %d %d", &valorVertice,&verticeDestino,&custo);
                     ins_aresta(grafo, valorVertice, verticeDestino, custo);
+                    ins_aresta(grafo, verticeDestino,valorVertice, custo);
                 }
             }
         }
@@ -69,6 +71,8 @@ int main(int argc, const char * argv[])
             printf("Digite o valor do custo:");
             scanf("%d",&custo);
             ins_aresta(grafo, valorVertice1, valorVertice2, custo);
+            ins_aresta(grafo, valorVertice2,valorVertice1, custo);
+
         }
         else if (entrada == 5){
             printf("Digite o valor do vertice 1:");
@@ -77,10 +81,12 @@ int main(int argc, const char * argv[])
             printf("Digite o valor do vertice 2:");
             scanf("%d",&valorVertice2);
             retira_aresta(grafo, valorVertice1, valorVertice2);
+            retira_aresta(grafo, valorVertice2,valorVertice1);
+
         }
         else if (entrada == 6){
             int respostaConexo;
-            respostaConexo = conexo(grafo);
+            respostaConexo = respConexo(grafo);
             if(respostaConexo == 1){
                 printf("O grafo é conexo");
 //            TODO  CHAMADA DE ARV GERADORA MINIMA E CAMINHO MAIS CURTO AQUI!
@@ -88,6 +94,10 @@ int main(int argc, const char * argv[])
             else{
                 printf("O grafo não é conexo");
             }
+        }
+        else if (entrada == 7){
+            printf("%d",grafo->no);
+            imprime(grafo);
         }
         
     }

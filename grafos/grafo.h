@@ -14,6 +14,7 @@
 
 typedef struct grafo{
     int no;
+    int visitado;
     TViz * prim_viz;
     struct grafo * prox;
 }TGrafo;
@@ -26,7 +27,7 @@ void ins_aresta(TGrafo * g, int no1, int no2, int custo);
 void retira_aresta(TGrafo * g, int no1, int no2);
 TGrafo * retira_no(TGrafo * g, int no);
 void libera(TGrafo *g);
-int conexo(TGrafo *g);
-
+int respConexo(TGrafo *g);
+void buscaProfundidade(TViz *viz, TGrafo *g);
 
 #endif
