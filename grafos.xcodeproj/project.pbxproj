@@ -12,6 +12,9 @@
 		3FD28C28191BB38B00B8459B /* grafos.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3FD28C27191BB38B00B8459B /* grafos.1 */; };
 		3FD28C2F191BB41D00B8459B /* grafo.c in Sources */ = {isa = PBXBuildFile; fileRef = 3FD28C2E191BB41D00B8459B /* grafo.c */; };
 		3FD28C33191BB44800B8459B /* vizinho.c in Sources */ = {isa = PBXBuildFile; fileRef = 3FD28C32191BB44800B8459B /* vizinho.c */; };
+		3FF5D3381936661C002099C9 /* dijkstra.c in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5D3371936661C002099C9 /* dijkstra.c */; };
+		3FF5D33C1936720B002099C9 /* lista_dijkstra.c in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5D33B1936720B002099C9 /* lista_dijkstra.c */; };
+		3FF5D33E193683BA002099C9 /* tlse.c in Sources */ = {isa = PBXBuildFile; fileRef = 3FF5D33D193683BA002099C9 /* tlse.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +40,12 @@
 		3FD28C30191BB43000B8459B /* grafo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grafo.h; sourceTree = "<group>"; };
 		3FD28C31191BB43B00B8459B /* vizinho.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vizinho.h; sourceTree = "<group>"; };
 		3FD28C32191BB44800B8459B /* vizinho.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vizinho.c; sourceTree = "<group>"; };
+		3FF5D3371936661C002099C9 /* dijkstra.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dijkstra.c; sourceTree = "<group>"; };
+		3FF5D33919366630002099C9 /* dijkstra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dijkstra.h; sourceTree = "<group>"; };
+		3FF5D33A193671E1002099C9 /* lista_dijkstra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lista_dijkstra.h; sourceTree = "<group>"; };
+		3FF5D33B1936720B002099C9 /* lista_dijkstra.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lista_dijkstra.c; sourceTree = "<group>"; };
+		3FF5D33D193683BA002099C9 /* tlse.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tlse.c; sourceTree = "<group>"; };
+		3FF5D33F193683C2002099C9 /* tlse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tlse.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +86,12 @@
 				3FD28C32191BB44800B8459B /* vizinho.c */,
 				3F7F3928193421A700B6F794 /* prim.c */,
 				3F7F392A193421B400B6F794 /* prim.h */,
+				3FF5D3371936661C002099C9 /* dijkstra.c */,
+				3FF5D33919366630002099C9 /* dijkstra.h */,
+				3FF5D33A193671E1002099C9 /* lista_dijkstra.h */,
+				3FF5D33B1936720B002099C9 /* lista_dijkstra.c */,
+				3FF5D33D193683BA002099C9 /* tlse.c */,
+				3FF5D33F193683C2002099C9 /* tlse.h */,
 			);
 			path = grafos;
 			sourceTree = "<group>";
@@ -132,10 +147,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF5D33E193683BA002099C9 /* tlse.c in Sources */,
 				3FD28C26191BB38B00B8459B /* main.c in Sources */,
 				3FD28C33191BB44800B8459B /* vizinho.c in Sources */,
 				3FD28C2F191BB41D00B8459B /* grafo.c in Sources */,
+				3FF5D3381936661C002099C9 /* dijkstra.c in Sources */,
 				3F7F3929193421A700B6F794 /* prim.c in Sources */,
+				3FF5D33C1936720B002099C9 /* lista_dijkstra.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
