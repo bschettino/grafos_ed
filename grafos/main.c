@@ -105,7 +105,6 @@ int main(int argc, const char * argv[])
             }
         }
         else if (entrada == 7){
-            printf("%d",grafo->no);
             imprime(grafo);
         }
         
