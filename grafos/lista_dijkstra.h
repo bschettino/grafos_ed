@@ -29,6 +29,8 @@ TLD * rem_lista_dijkstra (TLD *l, int no);
 
 void imprime_lista_dijkstra (TLD *l);
 
+void imprime_arquivo_lista_dijkstra (TLD *l);
+
 void liberar_lista_dijkstra(TLD *l);
 
 

@@ -41,6 +41,7 @@ TLD * minimo(TDijkstra * dj){
 
 void imprimeDijkstra(TDijkstra * dj){
     imprime_lista_dijkstra(dj->informacoes);
+    imprime_arquivo_lista_dijkstra(dj->informacoes);
 }
 
 void menor_distancia(TDijkstra * dj){

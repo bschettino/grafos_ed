@@ -72,6 +72,19 @@ void imprime_lista_dijkstra (TLD *l){
 }
 
 
+void imprime_arquivo_lista_dijkstra (TLD *l){
+    FILE *out;
+    out = fopen("./CMC.txt", "w");
+    if(out){
+        TLD *aux = l;
+        while(aux){
+            fprintf(out, "Nó: %d\t Distância: %d\t Pai: %d\n", aux->no, aux->distancia, aux->pai);
+            aux = aux->prox;
+        }
+        fclose(out);
+    }
+}
+
 void liberar_lista_dijkstra(TLD *l){
     TLD *aux = l;
     TLD *aux2 = NULL;

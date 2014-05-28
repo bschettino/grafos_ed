@@ -93,12 +93,24 @@ int main(int argc, const char * argv[])
             if(respostaConexo == 1){
                 printf("O grafo é conexo\n");
                 TGrafo * agm = arvore_geradora_minima(grafo);
+                printf("***********************************\n");
                 printf("Arvore geradora minima: \n");
+                imprime(agm);
                 imprime_agm(agm);
-                TDijkstra * dij = inicializa_dij(grafo, 0);
-                menor_distancia(dij);
-                printf("\nDijkstra: \n");
-                imprimeDijkstra(dij);
+                int valorVertice;
+                printf("Digite o Vértice de origem para entrada no Dijkstra");
+                scanf("%d",&valorVertice);
+                TGrafo *g = busca_no(grafo, valorVertice);
+                if(g){
+                    TDijkstra * dij = inicializa_dij(grafo, g->no);
+                    menor_distancia(dij);
+                    printf("***********************************\n");
+                    printf("\nDijkstra: \n");
+                    imprimeDijkstra(dij);
+                }
+                else{
+                    printf("Vértice não encontrado");
+                }
             }
             else{
                 printf("O grafo não é conexo");
@@ -109,5 +121,6 @@ int main(int argc, const char * argv[])
         }
         
     }
+    imprime_final(grafo);
     libera(grafo);
 }
