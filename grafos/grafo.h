@@ -21,6 +21,7 @@ typedef struct grafo{
 
 TGrafo * inicializa(void);
 void imprime(TGrafo * g);
+void imprime_final(TGrafo *g);
 TGrafo * busca_no(TGrafo * g, int no);
 TGrafo * ins_no(TGrafo * g, int no);
 void ins_aresta(TGrafo * g, int no1, int no2, int custo);

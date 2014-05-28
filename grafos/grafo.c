@@ -29,6 +29,24 @@ void imprime(TGrafo * g){
     }
 }
 
+void imprime_final(TGrafo *g){
+    FILE *out;
+    out = fopen("./novo.txt", "w");
+    if (out){
+        TGrafo * p = g;
+        while(p){
+            fprintf(out,"Nó %d \n", p->no);
+            TViz *q = p->prim_viz;
+            while(q){
+                fprintf(out,"Vizinho %d \t custo %d \n", q->id, q->custo);
+                q = q->prox_viz;
+            }
+            p = p->prox;
+        }
+        fclose(out);
+    }
+}
+
 TGrafo * busca_no(TGrafo *g, int no){
     TGrafo *p = g;
     while((p) && (p->no != no)){

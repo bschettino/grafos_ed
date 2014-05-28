@@ -21,5 +21,6 @@ typedef struct busca_prim{
 TGrafo * arvore_geradora_minima(TGrafo *g);
 int possui_no_a_inserir(TGrafo *g, TGrafo *a);
 TBPrim * proxima_aresta(TGrafo *g, TGrafo *a);
+void imprime_agm(TGrafo *g);
 
 #endif

@@ -31,7 +31,7 @@ int main(int argc, const char * argv[])
 		scanf("%d",&entrada);
         if(entrada == 1){
             FILE *in;
-            in = fopen("/Users/schettino/workspace/grafos_ed/entrada2.txt", "r");
+            in = fopen(argv[1], "r");
             int numVertices, valorVertice, numArestas, verticeDestino, custo,i;
             if(in){
                 //Leitura do tipo diz numero de vértices, depois lista os vértices
@@ -47,6 +47,7 @@ int main(int argc, const char * argv[])
                     ins_aresta(grafo, valorVertice, verticeDestino, custo);
                     ins_aresta(grafo, verticeDestino,valorVertice, custo);
                 }
+                fclose(in);
             }
         }
         else if (entrada == 2){
@@ -92,6 +93,7 @@ int main(int argc, const char * argv[])
                 TGrafo * agm = arvore_geradora_minima(grafo);
                 printf("Arvore geradora minima: \n");
                 imprime(agm);
+                imprime_agm(agm);
 //            TODO  CHAMADA DE ARV GERADORA MINIMA E CAMINHO MAIS CURTO AQUI!
             }
             else{
