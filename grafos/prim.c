@@ -80,6 +80,24 @@ TGrafo * arvore_geradora_minima(TGrafo *g){
     return a;
 }
 
+void imprime_agm(TGrafo *g){
+    FILE *out;
+    out = fopen("/Users/MateusPelegrino/Documents/UFF/Mestrado/Estrutura de Dados e Algoritmos/grafos_ed/AGM.txt", "w");
+    if (out){
+        TGrafo * p = g;
+        while(p){
+            fprintf(out,"Nó %d \n", p->no);
+            TViz *q = p->prim_viz;
+            while(q){
+                fprintf(out,"Vizinho %d \t custo %d \n", q->id, q->custo);
+                q = q->prox_viz;
+            }
+            p = p->prox;
+        }
+        fclose(out);
+    }
+}
+
 
 
 

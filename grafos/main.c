@@ -33,7 +33,7 @@ int main(int argc, const char * argv[])
 		scanf("%d",&entrada);
         if(entrada == 1){
             FILE *in;
-            in = fopen("/Users/schettino/workspace/grafos_ed/entradaDij.txt", "r");
+            in = fopen(argv[1], "r");
             int numVertices, valorVertice, numArestas, verticeDestino, custo,i;
             if(in){
                 //Leitura do tipo diz numero de vértices, depois lista os vértices
@@ -49,6 +49,7 @@ int main(int argc, const char * argv[])
                     ins_aresta(grafo, valorVertice, verticeDestino, custo);
                     ins_aresta(grafo, verticeDestino,valorVertice, custo);
                 }
+                fclose(in);
             }
         }
         else if (entrada == 2){
@@ -93,14 +94,11 @@ int main(int argc, const char * argv[])
                 printf("O grafo é conexo\n");
                 TGrafo * agm = arvore_geradora_minima(grafo);
                 printf("Arvore geradora minima: \n");
-                imprime(agm);
+                imprime_agm(agm);
                 TDijkstra * dij = inicializa_dij(grafo, 0);
                 menor_distancia(dij);
                 printf("\nDijkstra: \n");
                 imprimeDijkstra(dij);
-                
-                
-//            TODO  CHAMADA DE ARV GERADORA MINIMA E CAMINHO MAIS CURTO AQUI!
             }
             else{
                 printf("O grafo não é conexo");
