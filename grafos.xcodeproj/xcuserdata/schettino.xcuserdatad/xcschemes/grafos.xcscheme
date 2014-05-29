@@ -59,13 +59,13 @@
       </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
-            key = "filename"
-            value = "~/workspace/grafos_ed/entrada2.txt"
+            key = "0"
+            value = "/Users/schettino/workspace/grafos_ed/entrada2.txt"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
-            key = "arquivo"
-            value = "~/workspace/grafos_ed/entrada2.txt"
+            key = "1"
+            value = "/Users/schettino/workspace/grafos_ed/entrada2.txt"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

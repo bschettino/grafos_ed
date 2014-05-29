@@ -25,6 +25,7 @@ typedef struct tipo_dijkstra{
 TDijkstra * inicializa_dij(TGrafo *g, int origem);
 void menor_distancia(TDijkstra * dj);
 void imprimeDijkstra(TDijkstra * dj);
+void liberar_dijksta(TDijkstra * dj);
 
 
 #endif

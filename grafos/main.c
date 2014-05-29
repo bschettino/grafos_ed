@@ -97,8 +97,9 @@ int main(int argc, const char * argv[])
                 printf("Arvore geradora minima: \n");
                 imprime(agm);
                 imprime_agm(agm);
+                libera(agm);
                 int valorVertice;
-                printf("Digite o Vértice de origem para entrada no Dijkstra");
+                printf("Digite o Vértice de origem para entrada no Dijkstra:");
                 scanf("%d",&valorVertice);
                 TGrafo *g = busca_no(grafo, valorVertice);
                 if(g){
@@ -107,6 +108,7 @@ int main(int argc, const char * argv[])
                     printf("***********************************\n");
                     printf("\nDijkstra: \n");
                     imprimeDijkstra(dij);
+                    liberar_dijksta(dij);
                 }
                 else{
                     printf("Vértice não encontrado");
